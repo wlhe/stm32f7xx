@@ -1,0 +1,13 @@
+# .gitignore
+
+*.o
+*.a
+
+*.ewd
+*.ewt
+*.dep
+settings/
+*.mxproject
+Exe/
+Obj/
+List/
