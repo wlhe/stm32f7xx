@@ -6,8 +6,11 @@
 *.ewd
 *.ewt
 *.dep
-settings/
 *.mxproject
+
+settings/
 Exe/
 Obj/
 List/
+
+_si/
