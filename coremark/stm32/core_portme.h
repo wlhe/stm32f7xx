@@ -51,6 +51,8 @@
 #include <time.h>
 typedef clock_t CORE_TICKS;
 
+#include "plat_hardware.h"
+
 /* Definitions : COMPILER_VERSION, COMPILER_FLAGS, MEM_LOCATION
 	Initialize these strings per platform
 */
@@ -58,11 +60,11 @@ typedef clock_t CORE_TICKS;
  #ifdef __GNUC__
  #define COMPILER_VERSION "GCC"__VERSION__
  #else
- #define COMPILER_VERSION "IAR Embedded Workbench -ARM 7.80.2"//"Please put compiler version here (e.g. gcc 4.1)"
+ #define COMPILER_VERSION "Please put compiler version here (e.g. gcc 4.1)"
  #endif
 #endif
 #ifndef COMPILER_FLAGS 
- #define COMPILER_FLAGS  "-Ohs -no_size_constraints" //FLAGS_STR/* "Please put compiler flags here (e.g. -o3)" */
+ #define COMPILER_FLAGS FLAGS_STR /* "Please put compiler flags here (e.g. -o3)" */
 #endif
 #ifndef MEM_LOCATION 
  #define MEM_LOCATION "STACK"

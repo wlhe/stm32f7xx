@@ -321,6 +321,7 @@
           <state>$PROJ_DIR$/../Drivers/CMSIS/Device/ST/STM32F7xx/Include</state>
           <state>$PROJ_DIR$/../Drivers/CMSIS/Include</state>
           <state>$PROJ_DIR$\..\..\coremark</state>
+          <state>$PROJ_DIR$\..\..\coremark\stm32</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1003,6 +1004,15 @@
   </group>
   <group>
     <name>Coremark</name>
+    <group>
+      <name>stm32</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\coremark\stm32\core_portme.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\coremark\stm32\plat_hardware.c</name>
+      </file>
+    </group>
     <file>
       <name>$PROJ_DIR$\..\..\coremark\core_list_join.c</name>
     </file>
@@ -1011,9 +1021,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\coremark\core_matrix.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\coremark\core_portme.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\coremark\core_state.c</name>
