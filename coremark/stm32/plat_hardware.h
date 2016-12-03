@@ -25,6 +25,8 @@
 #include "usart.h"
 #include "gpio.h"
 
+#define PRINTF_HUART    huart1
+
 void hardware_init(void);
 
 
