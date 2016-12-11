@@ -326,7 +326,7 @@
           <state>$PROJ_DIR$\..\Drivers\BSP\STM32F769I-Discovery</state>
           <state>$PROJ_DIR$\..\Drivers\BSP\Components\Common</state>
           <state>$PROJ_DIR$\..\Drivers\BSP\Components</state>
-          <state>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\include\                             </state>
+          <state>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\src\include\</state>
           <state>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\system</state>
           <state>$PROJ_DIR$\..\Middlewares\Third_Party\LwIP\system\OS</state>
           <state>$PROJ_DIR$\..\Middlewares\Third_Party\FreeRTOS\Source\portable\IAR\ARM_CM7\r0p1</state>
@@ -340,6 +340,7 @@
           <state>$PROJ_DIR$\..\Drivers\BSP\Components\ov9655</state>
           <state>$PROJ_DIR$\..\Drivers\BSP\Components\otm8009a</state>
           <state>$PROJ_DIR$\..\Drivers\BSP\Components\adv7533</state>
+          <state>$PROJ_DIR$\..\..\source</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1014,6 +1015,9 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Src\main.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\source\my_socket_server.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Src\stm32f7xx_hal_timebase_tim.c</name>

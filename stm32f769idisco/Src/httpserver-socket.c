@@ -268,8 +268,8 @@ static void http_server_socket_thread(void *arg)
   while (1) 
   {
     newconn = accept(sock, (struct sockaddr *)&remotehost, (socklen_t *)&size);
-	LCD_UsrLog("connected\r\n");
-		
+	//LCD_UsrLog("connected\r\n");
+	
     http_server_serve(newconn);
   }
 }

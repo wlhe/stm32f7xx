@@ -57,6 +57,7 @@
 #include "app_ethernet.h"
 #include "lcd_log.h"
 #include "httpserver-socket.h"
+#include "my_socket_server.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -131,7 +132,8 @@ static void StartThread(void const * argument)
   Netif_Config(); 
   
   /* Initialize webserver demo */
-  http_server_socket_init();
+  //http_server_socket_init();
+  my_server_init();
   
   /* Notify user about the network interface config */
   User_notification(&gnetif);
