@@ -1,0 +1,10 @@
+cmake_minimum_required (VERSION 2.6)
+
+project (client)
+
+set (sources
+     tcpclient.c
+)
+ 
+add_executable(${CMAKE_PROJECT_NAME} ${sources})
+
