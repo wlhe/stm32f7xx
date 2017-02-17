@@ -2,16 +2,34 @@
 
 *.o
 *.a
+*.d
 
+*.axf
+*.hex
+*.bin
+
+#Cubemx
+*.mxproject
+
+#EWARM
 *.ewd
 *.ewt
 *.dep
-*.mxproject
-
 settings/
 Exe/
 Obj/
 List/
 
+#Drivers/CMSIS
+DSP_Lib/
+RTOS/
+
+#MDK-ARM
+RTE/
+*Configuration/
+DebugConfig/
+*.uvguix.*
+*.uvoptx
+*.lst
+
 _si/
-_dep
