@@ -32,4 +32,9 @@ DebugConfig/
 *.uvoptx
 *.lst
 
+#SW4STM32
+.metadata/
+RemoteSystemsTempFiles/
+
 _si/
+.vscode/
