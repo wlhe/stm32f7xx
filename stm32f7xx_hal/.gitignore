@@ -1,0 +1,6 @@
+# .gitignore
+
+#Drivers/CMSIS
+DSP_Lib/
+RTOS/
+Templates/
