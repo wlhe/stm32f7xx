@@ -10,6 +10,7 @@
 
 #Cubemx
 *.mxproject
+*.scratch
 
 #EWARM
 *.ewd
@@ -38,3 +39,4 @@ RemoteSystemsTempFiles/
 
 _si/
 .vscode/
+build/
