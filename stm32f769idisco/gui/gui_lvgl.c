@@ -6,7 +6,6 @@
 #include "stm32f769i_discovery_lcd.h"
 #include "stm32f769i_discovery_ts.h"
 #include "otm8009a.h"
-#include "lvgl/lvgl.h"
 #include "demo.h"
 
 #define LCD_HOR_RES LV_HOR_RES

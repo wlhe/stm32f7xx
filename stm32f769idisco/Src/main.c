@@ -39,6 +39,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f7xx_hal.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
@@ -97,12 +98,12 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  BSP_LED_Init(LED1);
-  BSP_LED_Init(LED2);
 
   lvgl_init();
   lvgl_run();
+  static int i = 0;
   // extern void button_test(void);
   // button_test();
   /* USER CODE END 2 */
@@ -122,6 +123,12 @@ int main(void)
   HAL_Delay(5);
   lv_task_handler();
 
+  if (i++ % 100 == 0) {
+    printf("TEST\n");
+    // HAL_UART_Transmit(&huart1, (uint8_t *)"test uart\n", 10, 0xFFFF);
+    BSP_LED_Toggle(LED1);
+  }
+
   }
   /* USER CODE END 3 */
 
@@ -136,6 +143,7 @@ void SystemClock_Config(void)
 
   RCC_OscInitTypeDef RCC_OscInitStruct;
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct;
 
     /**Configure the main internal regulator output voltage
     */
@@ -175,6 +183,13 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_6) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART1;
+  PeriphClkInitStruct.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }

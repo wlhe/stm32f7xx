@@ -46,6 +46,7 @@ C_SOURCES =  \
 Src/stm32f7xx_hal_msp.c \
 Src/stm32f7xx_it.c \
 Src/gpio.c \
+Src/usart.c \
 Src/system_stm32f7xx.c \
 Src/main.c \
 gui/gui_lvgl.c
@@ -120,6 +121,7 @@ ASFLAGS += $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunct
 
 CFLAGS += $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
+CFLAGS += -std=gnu99
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2
 endif

@@ -18,6 +18,8 @@ HAL_SRC = \
 	$(SRC_DIR)/stm32f7xx_hal_flash_ex.c \
 	$(SRC_DIR)/stm32f7xx_hal_tim.c \
 	$(SRC_DIR)/stm32f7xx_hal_gpio.c \
+	$(SRC_DIR)/stm32f7xx_hal_uart.c \
+	$(SRC_DIR)/stm32f7xx_hal_usart.c \
 	$(SRC_DIR)/stm32f7xx_hal_i2c.c \
 	$(SRC_DIR)/stm32f7xx_hal_dma2d.c \
 	$(SRC_DIR)/stm32f7xx_hal_dsi.c \
