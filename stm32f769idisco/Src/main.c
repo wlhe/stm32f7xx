@@ -44,6 +44,7 @@
 /* USER CODE BEGIN Includes */
 #include "stm32f769i_discovery.h"
 #include "stm32f769i_discovery_lcd.h"
+#include "lvgl/lvgl.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -62,6 +63,7 @@ void SystemClock_Config(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+
 
 /* USER CODE END 0 */
 
@@ -103,6 +105,9 @@ int main(void)
   BSP_LCD_Clear(LCD_COLOR_WHITE);
   BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
   BSP_LCD_DisplayStringAtLine(5, "Hello, I'm wlhe!");
+
+  extern void lvgl_init(void);
+  lvgl_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -113,9 +118,12 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-  BSP_LED_Toggle(LED1);
-  BSP_LED_Toggle(LED2);
-  HAL_Delay(500);
+  // BSP_LED_Toggle(LED1);
+  // BSP_LED_Toggle(LED2);
+  // HAL_Delay(500);
+
+  HAL_Delay(10);
+  lv_task_handler();
 
   }
   /* USER CODE END 3 */

@@ -47,10 +47,13 @@ Src/stm32f7xx_hal_msp.c \
 Src/stm32f7xx_it.c \
 Src/gpio.c \
 Src/system_stm32f7xx.c \
-Src/main.c
+Src/main.c \
+Src/lvgl.c
 
 DRV_PATH = ../stm32f7xx_hal/Drivers
 include $(DRV_PATH)/drivers.mk
+LVGL_DIR = ../lvgl
+include $(LVGL_DIR)/lvgl.mk
 C_SOURCES += $(SRCS)
 
 # ASM sources
@@ -170,7 +173,7 @@ $(BUILD_DIR):
 	mkdir $@
 
 test:
-	@echo $(INCS)
+	@echo $(CFLAGS)
 
 #######################################
 # clean up
