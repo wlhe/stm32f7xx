@@ -16,7 +16,7 @@
  * to store the graphical objects and other data */
 #define LV_MEM_CUSTOM      0                /*1: use custom malloc/free, 0: use the built-in lv_mem_alloc/lv_mem_free*/
 #if LV_MEM_CUSTOM == 0
-#define LV_MEM_SIZE    (32U * 1024U)        /*Size memory used by `lv_mem_alloc` in bytes (>= 2kB)*/
+#define LV_MEM_SIZE    (80U * 1024U)        /*Size memory used by `lv_mem_alloc` in bytes (>= 2kB)*/
 #define LV_MEM_ATTR                         /*Complier prefix for big array declaration*/
 #define LV_MEM_AUTO_DEFRAG  1               /*Automatically defrag on free*/
 #else       /*LV_MEM_CUSTOM*/
@@ -30,15 +30,15 @@
  *===================*/
 
 /* Horizontal and vertical resolution of the library.*/
-#define LV_HOR_RES          (320)
-#define LV_VER_RES          (240)
-#define LV_DPI              100
+#define LV_HOR_RES          (800)
+#define LV_VER_RES          (480)
+#define LV_DPI              (60)
 
 /* Size of VDB (Virtual Display Buffer: the internal graphics buffer).
  * Required for buffered drawing, opacity and anti-aliasing
  * VDB makes the double buffering, you don't need to deal with it!
  * Typical size: ~1/10 screen */
-#define LV_VDB_SIZE         (20 * LV_HOR_RES)  /*Size of VDB in pixel count (1/10 screen size is good for first)*/
+#define LV_VDB_SIZE         (40 * LV_HOR_RES)  /*Size of VDB in pixel count (1/10 screen size is good for first)*/
 #define LV_VDB_ADR          0                  /*Place VDB to a specific address (e.g. in external RAM) (0: allocate automatically into RAM)*/
 
 /* Use two Virtual Display buffers (VDB) parallelize rendering and flushing (optional)

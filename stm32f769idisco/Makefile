@@ -48,7 +48,7 @@ Src/stm32f7xx_it.c \
 Src/gpio.c \
 Src/system_stm32f7xx.c \
 Src/main.c \
-Src/lvgl.c
+gui/gui_lvgl.c
 
 DRV_PATH = ../stm32f7xx_hal/Drivers
 include $(DRV_PATH)/drivers.mk
@@ -112,6 +112,7 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -IInc \
+-Igui
 
 
 # compile gcc flags
@@ -173,7 +174,7 @@ $(BUILD_DIR):
 	mkdir $@
 
 test:
-	@echo $(CFLAGS)
+	@echo $(VPATH)
 
 #######################################
 # clean up
