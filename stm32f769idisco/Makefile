@@ -170,7 +170,7 @@ $(BUILD_DIR):
 	mkdir $@
 
 test:
-	@echo $(CFLAGS)
+	@echo $(INCS)
 
 #######################################
 # clean up

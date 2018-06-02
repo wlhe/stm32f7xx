@@ -42,7 +42,8 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "stm32f769i_discovery.h"
+#include "stm32f769i_discovery_lcd.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -94,7 +95,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+  BSP_LED_Init(LED1);
+  BSP_LED_Init(LED2);
+  BSP_LCD_Init();
+  BSP_LCD_LayerDefaultInit(0, LCD_FB_START_ADDRESS);
+  BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+  BSP_LCD_Clear(LCD_COLOR_WHITE);
+  BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
+  BSP_LCD_DisplayStringAtLine(5, "Hello, I'm wlhe!");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -105,7 +113,8 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+  BSP_LED_Toggle(LED1);
+  BSP_LED_Toggle(LED2);
   HAL_Delay(500);
 
   }

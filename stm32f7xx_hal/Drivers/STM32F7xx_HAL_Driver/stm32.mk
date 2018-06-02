@@ -1,7 +1,8 @@
-# .PHONY: all clean
+# stm32.mk
 HAL_PATH ?=
 OUTPUT ?= .output
-SRC_DIR = $(HAL_PATH)/Src
+
+SRC_DIR = Src
 HAL_SRC = \
 	$(SRC_DIR)/stm32f7xx_hal_cortex.c \
 	$(SRC_DIR)/stm32f7xx_hal.c \
@@ -17,7 +18,15 @@ HAL_SRC = \
 	$(SRC_DIR)/stm32f7xx_hal_flash_ex.c \
 	$(SRC_DIR)/stm32f7xx_hal_tim.c \
 	$(SRC_DIR)/stm32f7xx_hal_gpio.c \
-	$(SRC_DIR)/stm32f7xx_hal_i2c.c
+	$(SRC_DIR)/stm32f7xx_hal_i2c.c \
+	$(SRC_DIR)/stm32f7xx_hal_dma2d.c \
+	$(SRC_DIR)/stm32f7xx_hal_dsi.c \
+	$(SRC_DIR)/stm32f7xx_hal_ltdc.c \
+	$(SRC_DIR)/stm32f7xx_hal_ltdc_ex.c \
+	$(SRC_DIR)/stm32f7xx_hal_sdram.c
+
+HAL_SRC += \
+	$(SRC_DIR)/stm32f7xx_ll_fmc.c
 
 HAL_INC += \
 	$(HAL_PATH)/Inc \
@@ -27,9 +36,12 @@ DEFS += \
 -DUSE_HAL_DRIVER \
 -DSTM32F769xx
 
-SRCS += $(HAL_SRC)
-INCS += $(HAL_INC)
-OBJS += $(addprefix $(OUTPUT)/,$(HAL_SRC:.c=.o))
+VPATH += :$(HAL_PATH)/Src
 
 CFLAGS += $(HAL_DEF)
 CFLAGS += $(addprefix -I, $(HAL_INC))
+
+# export var
+SRCS += $(HAL_SRC)
+INCS += $(HAL_INC)
+OBJS += $(addprefix $(OUTPUT)/,$(HAL_SRC:.c=.o))
