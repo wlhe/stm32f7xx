@@ -55,6 +55,7 @@ DRV_PATH = ../stm32f7xx_hal/Drivers
 include $(DRV_PATH)/drivers.mk
 LVGL_DIR = ../lvgl
 include $(LVGL_DIR)/lvgl.mk
+include $(LVGL_DIR)/example.mk
 C_SOURCES += $(SRCS)
 
 # ASM sources
